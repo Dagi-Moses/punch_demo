@@ -155,19 +155,3 @@ class _LoginScreenState extends State<LoginScreen> {
   /// Icon paths should be the full path in the assets
   /// Don't forget to also add the icon folder to the "pubspec.yaml" file.
 }
-
-/// Example forgot password screen
-class ForgotPasswordScreen extends StatelessWidget {
-  /// Example forgot password screen that user is navigated to
-  /// after clicked on "Forgot Password?" text.
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('FORGOT PASSWORD'),
-      ),
-    );
-  }
-}

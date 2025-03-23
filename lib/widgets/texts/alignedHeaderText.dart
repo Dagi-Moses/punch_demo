@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:punch/admin/core/constants/color_constants.dart';
+import 'package:punch/src/color_constants.dart';
 
 Widget alignedHeaderText({required String title}){
   return  Align(

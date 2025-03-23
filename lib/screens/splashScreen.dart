@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:punch/admin/core/constants/color_constants.dart';
+import 'package:punch/src/color_constants.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

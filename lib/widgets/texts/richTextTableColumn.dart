@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:paged_datatable/paged_datatable.dart';
-import 'package:punch/admin/core/constants/color_constants.dart';
+import 'package:punch/src/color_constants.dart';
 
 
 final class HighlightQueryColumn<K extends Comparable<K>, T>

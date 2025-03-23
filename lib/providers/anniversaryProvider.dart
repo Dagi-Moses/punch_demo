@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 // import 'package:image_picker/image_picker.dart';
 import 'package:punch/functions/imageFunctions.dart';
@@ -310,9 +311,11 @@ Future<Uint8List?> pickImage() async {
       );
 
       if (response.statusCode == 200) {
-        await anniversaryTypes.remove(anniversaryTypeId);
+      anniversaryTypes.remove(anniversaryTypeId);
         notifyListeners();
-        Navigator.pop(context);
+       if (GoRouter.of(context).canPop()) {
+          GoRouter.of(context).pop();
+        }
 
         print('Anniversary type deleted successfully');
       } else {
@@ -339,7 +342,9 @@ Future<Uint8List?> pickImage() async {
       if (response.statusCode == 200) {
         await paperTypes.remove(paperTypeId);
         notifyListeners();
-        Navigator.pop(context);
+         if (GoRouter.of(context).canPop()) {
+          GoRouter.of(context).pop();
+        }
 
         print('papers deleted successfully');
       } else {
@@ -566,8 +571,12 @@ Future<Uint8List?> pickImage() async {
       final response = await http
           .delete(Uri.parse('${Const.anniversaryUrl}/${anniversary.id}'));
       if (response.statusCode == 200) {
-        if (Navigator.canPop(context)) {
-          Navigator.pop(context);
+       
+         if (GoRouter.of(context).canPop()) {
+          Future.delayed(Duration.zero,(){
+            GoRouter.of(context).pop();
+          });
+      
         }
         Fluttertoast.showToast(
           msg: "Deleted",

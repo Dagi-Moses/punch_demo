@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:punch/admin/core/constants/color_constants.dart';
+import 'package:punch/src/color_constants.dart';
 import 'package:punch/providers/textConroller.dart';
 
 import 'package:punch/widgets/dialogs/dialogs/deleteConfirmation.dart';

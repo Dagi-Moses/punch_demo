@@ -1,4 +1,4 @@
-import 'package:punch/admin/core/constants/color_constants.dart';
+import 'package:punch/src/color_constants.dart';
 import 'package:punch/decorations/text_styles.dart';
 import 'package:punch/providers/login_theme.dart';
 import 'package:punch/responsiveness/dynamic_size.dart';

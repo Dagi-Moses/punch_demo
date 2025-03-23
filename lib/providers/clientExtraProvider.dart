@@ -190,7 +190,7 @@ class ClientExtraProvider with ChangeNotifier {
           backgroundColor: Colors.red,
           textColor: Colors.white,
         );
-        // if (Navigator.canPop(context)) {
+        // if (GoRouter.of(context).canPop()) {
         //   Navigator.pop(context);
         // }
         notifyListeners();

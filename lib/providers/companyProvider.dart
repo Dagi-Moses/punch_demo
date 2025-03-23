@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker_web/image_picker_web.dart';
 import 'package:paged_datatable/paged_datatable.dart';
@@ -344,7 +345,7 @@ class CompanyProvider with ChangeNotifier {
       if (response.statusCode == 200) {
         await companySectors.remove(anniversaryTypeId);
         notifyListeners();
-        Navigator.pop(context);
+   GoRouter.of(context).pop();
 
         print('Anniversary type deleted successfully');
       } else {
@@ -548,8 +549,10 @@ class CompanyProvider with ChangeNotifier {
         if (companyExtra != null) {
           deleteCompanyExtra(context, companyExtra.id!);
         }
-        if (Navigator.canPop(context)) {
-          Navigator.pop(context);
+        if (GoRouter.of(context).canPop()) {
+   Future.delayed(Duration.zero, () {
+            GoRouter.of(context).pop();
+          });
         }
         Fluttertoast.showToast(
           msg: "deleted",
